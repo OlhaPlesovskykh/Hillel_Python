@@ -14,44 +14,29 @@
 """
 
 password = input("Enter your password: ")
-len_string = False
-has_digit = False
-has_upper = False
-has_lower = False
-has_alnum = False
-score = 0
+len_string = 0
+has_digit = 0
+has_upper = 0
+has_lower = 0
+has_spec = 0
 
 if len(password) >= 8:
-    len_string = True
-    score += 1
+    len_string = 1
 
 for char in password:
     if char.isdigit():
-        has_digit = True
-        score += 1
-        break
-
-for char in password:
+        has_digit = 1
     if char.isupper():
-        has_upper = True
-        score += 1
-        break
-
-for char in password:
+        has_upper = 1
     if char.islower():
-        has_lower = True
-        score += 1
-        break
-
-for char in password:
+        has_lower = 1
     if not char.isalnum():
-        has_alnum = True
-        score += 1
-        break
+        has_spec = 1
 
+score = len_string + has_digit + has_upper + has_lower + has_spec
 print(f"Password score: {score}")
 
-if not len_string or not has_digit or not has_upper or not has_lower or not has_alnum:
+if not len_string or not has_digit or not has_upper or not has_lower or not has_spec:
     print("Recommendation:")
 
 if not len_string:
@@ -66,5 +51,5 @@ if not has_upper:
 if not has_lower:
     print("Use lowercase letters")
 
-if not has_alnum:
+if not has_spec:
     print("Use special characters")
