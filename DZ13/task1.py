@@ -14,9 +14,7 @@ def change(current_list: list) -> list:
 
 
 def to_dict(current_list: list) -> dict:
-    current_dict = {}
-    for i in current_list:
-        current_dict[i] = i
+    current_dict = {i: i for i in current_list}
     return current_dict
 
 
@@ -24,9 +22,7 @@ def sum_range(start: int, end: int) -> int:
     number_sum = 0
     if start > end:
         start, end = end, start
-    for i in range(start, end + 1):
-        number_sum += i
-    return number_sum
+    return sum([number_sum + i for i in range(start, end + 1)])
 
 
 list_1 = [1, 2, 3]
