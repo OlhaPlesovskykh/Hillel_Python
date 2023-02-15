@@ -1,0 +1,6 @@
+When building a source distribution for your package, by default only a minimal set of files are included.
+You may find yourself wanting to include extra files in the source distribution, such as an authors/contributors file,
+a docs/ directory, or a directory of data files used for testing purposes. There may even be extra files that you
+need to include; for example, if your setup.py computes your project’s long_description by reading from both a
+README and a changelog file, you’ll need to include both those files in the sdist so that people that build or
+install from the sdist get the correct results. When
