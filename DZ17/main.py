@@ -15,14 +15,14 @@ call(phone_number) - который будет выводить "{self.phone} в
 
 
 class Human:
-    def __init__(self, name, surname, age, phone, address):
+    def __init__(self, name: str, surname: str, age: int, phone: int, address: str):
         self.name = name
         self.surname = surname
         self.age = age
         self.phone = phone
         self.address = address
 
-    def get_info(self):
+    def get_info(self) -> dict:
         dict_info = {"name": self.name,
                      "surname": self.surname,
                      "age": self.age,
@@ -30,7 +30,7 @@ class Human:
                      "address": self.address}
         return dict_info
 
-    def call(self, phone_number):
+    def call(self, phone_number) -> str:
         return f"{self.phone} вызывает абонента {phone_number}"
 
 
